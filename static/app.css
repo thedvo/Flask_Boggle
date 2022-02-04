@@ -1,0 +1,80 @@
+html {
+	background-color: rgb(252, 246, 239);
+}
+
+body {
+	margin-top: -25px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 60px;
+	margin-bottom: -5px;
+}
+
+#instructions {
+	text-align: center;
+}
+
+.board {
+	text-align: center;
+	margin: auto;
+	border: solid 2px black;
+	border-radius: 6px;
+	background-color: rgba(17, 90, 199, 0.856);
+	padding: 4px;
+	cursor: pointer;
+}
+
+.board td {
+	width: 65px;
+	height: 65px;
+	border: solid 1.5px black;
+	border-radius: 7px;
+	background-color: white;
+	filter: drop-shadow(2px 1.5px 1.5px rgba(0, 0, 0, 0.582));
+}
+
+.board td:hover {
+	background-color: rgb(211, 238, 175);
+}
+
+#make-guess {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.above-game-board {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.current-score {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#timer {
+	border: solid 2px black;
+	border-radius: 5px;
+	padding: 8px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: white;
+}
+
+.msg {
+	text-align: center;
+	font-weight: bold;
+	margin-top: -10px;
+}
+
+.words {
+	text-align: center;
+	list-style: none;
+}
+
+#word {
+	text-transform: uppercase;
+}

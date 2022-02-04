@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Boggle</title>
+</head>
+<body>
+
+    <h1>Boggle</h1>
+    
+    <section id="boggle">
+    
+    <div class="above-game-board">
+        <p class="high-score">
+            High Score: <b>{{ highscore }}</b><br>
+            Games Played: <b>{{ times_played }}</b>
+        </p>
+
+        <!-- 60 Second Timer -->
+        <button id="timer"></button>
+    </div>
+        
+        <table class="board">
+            <tbody>
+                {% for row in board %}
+                <tr>
+                    {% for letter in row %}
+                    <td>{{ letter }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p id="instructions">To earn points, create words from the random assortment of letters in the grid. <br> Points are determined by the length of the word.</p>
+
+        <form method="POST" id="make-guess">
+            <input name="word" id="word" autocomplete="off">
+            <button>Enter</button>
+            <!-- when user submits, a GET request will be made to the server to check if the word is valid -->
+        </form>
+
+
+        <div class="current-score">
+            <!-- User's current score -->
+            <p>Score:<b id="score"> 0</b></p>
+        </div>  
+
+        <p class="msg">
+            <!-- Messages will be placed here -->
+        </p>
+        
+        <ul class="words">
+            <!-- Valid guesses will be placed here -->
+        </ul>
+
+    </section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/static/app.js"></script>   
+<script>
+    let newGame = new BoggleGame(60);
+</script>
+</body>
+</html>
